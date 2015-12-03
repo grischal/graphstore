@@ -1,6 +1,3 @@
-org.gephi.attribute.api
-org.gephi.attribute.time
 org.gephi.graph.api
+org.gephi.graph.api.types
 org.gephi.graph.spi
-org.gephi.graph.store
-org.gephi.graph.utils
