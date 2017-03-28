@@ -808,6 +808,11 @@ public class BasicGraphStore implements DirectedGraph {
         }
 
         @Override
+        public int role() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
         public void setX(float x) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
@@ -859,6 +864,11 @@ public class BasicGraphStore implements DirectedGraph {
 
         @Override
         public void setSize(float size) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public void setRole(int role) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 

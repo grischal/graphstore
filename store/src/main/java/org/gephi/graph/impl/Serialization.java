@@ -692,6 +692,7 @@ public class Serialization {
         serialize(out, nodeProperties.z);
         serialize(out, nodeProperties.rgba);
         serialize(out, nodeProperties.size);
+        serialize(out, nodeProperties.role);
         serialize(out, nodeProperties.fixed);
         serialize(out, nodeProperties.textProperties);
     }
@@ -702,6 +703,7 @@ public class Serialization {
         float z = (Float) deserialize(is);
         int rgba = (Integer) deserialize(is);
         float size = (Float) deserialize(is);
+        int role = (Integer) deserialize(is);
         boolean fixed = (Boolean) deserialize(is);
         TextPropertiesImpl textProperties = (TextPropertiesImpl) deserialize(is);
 
@@ -711,6 +713,7 @@ public class Serialization {
         props.z = z;
         props.rgba = rgba;
         props.size = size;
+        props.role = role;
         props.fixed = fixed;
         props.setTextProperties(textProperties);
 

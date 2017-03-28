@@ -150,6 +150,11 @@ public class NodeImpl extends ElementImpl implements Node {
     }
 
     @Override
+    public int role() {
+        return properties.role();
+    }
+
+    @Override
     public boolean isFixed() {
         return properties.isFixed();
     }
@@ -170,6 +175,7 @@ public class NodeImpl extends ElementImpl implements Node {
         properties.z = nodeProperties.z;
         properties.rgba = nodeProperties.rgba;
         properties.size = nodeProperties.size;
+        properties.role = nodeProperties.role;
         properties.fixed = nodeProperties.fixed;
         if (properties.textProperties != null) {
             properties.setTextProperties(nodeProperties.textProperties);
@@ -237,6 +243,11 @@ public class NodeImpl extends ElementImpl implements Node {
     }
 
     @Override
+    public void setRole(int role) {
+        properties.setRole(role);
+    }
+
+    @Override
     public void setLayoutData(LayoutData layoutData) {
         properties.setLayoutData(layoutData);
     }
@@ -255,6 +266,7 @@ public class NodeImpl extends ElementImpl implements Node {
         protected float x;
         protected float y;
         protected float z;
+        protected int role;
         protected int rgba;
         protected float size;
         protected boolean fixed;
@@ -318,6 +330,11 @@ public class NodeImpl extends ElementImpl implements Node {
         @Override
         public boolean isFixed() {
             return fixed;
+        }
+
+        @Override
+        public int role() {
+            return role;
         }
 
         @Override
@@ -396,6 +413,11 @@ public class NodeImpl extends ElementImpl implements Node {
         }
 
         @Override
+        public void setRole(int role) {
+            this.role = role;
+        }
+
+        @Override
         public void setFixed(boolean fixed) {
             this.fixed = fixed;
         }
@@ -412,6 +434,7 @@ public class NodeImpl extends ElementImpl implements Node {
             hash = 53 * hash + Float.floatToIntBits(this.z);
             hash = 53 * hash + this.rgba;
             hash = 53 * hash + Float.floatToIntBits(this.size);
+            hash = 53 * hash + this.role;
             hash = 53 * hash + (this.fixed ? 1 : 0);
             hash = 53 * hash + (this.layoutData != null ? this.layoutData.hashCode() : 0);
             hash = 53 * hash + (this.textProperties != null ? this.textProperties.deepHashCode() : 0);
@@ -435,6 +458,9 @@ public class NodeImpl extends ElementImpl implements Node {
                 return false;
             }
             if (Float.floatToIntBits(this.size) != Float.floatToIntBits(obj.size)) {
+                return false;
+            }
+            if (this.role != obj.role) {
                 return false;
             }
             if (this.fixed != obj.fixed) {

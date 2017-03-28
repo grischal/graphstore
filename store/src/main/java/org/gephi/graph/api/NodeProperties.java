@@ -22,6 +22,8 @@ import org.gephi.graph.spi.LayoutData;
  */
 public interface NodeProperties extends ElementProperties {
 
+    public int role();
+
     /**
      * Returns the x position.
      *
@@ -123,4 +125,6 @@ public interface NodeProperties extends ElementProperties {
      * @param layoutData the layout data
      */
     public void setLayoutData(LayoutData layoutData);
+
+    public void setRole(int role);
 }

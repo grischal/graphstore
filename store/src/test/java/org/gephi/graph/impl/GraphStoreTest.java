@@ -279,6 +279,11 @@ public class GraphStoreTest {
             }
 
             @Override
+            public int role() {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
             public void setX(float x) {
                 throw new UnsupportedOperationException("Not supported yet.");
             }
@@ -330,6 +335,11 @@ public class GraphStoreTest {
 
             @Override
             public void setSize(float size) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void setRole(int role) {
                 throw new UnsupportedOperationException("Not supported yet.");
             }
 
